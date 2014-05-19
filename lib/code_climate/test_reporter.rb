@@ -3,13 +3,13 @@ module CodeClimate
 
     def self.start
       if run?
-        logger.debug("Starting Code Climate test reporter.")
+        logger.info("Starting Code Climate test reporter.")
         require "simplecov"
         ::SimpleCov.add_filter 'vendor'
         ::SimpleCov.formatter = Formatter
         ::SimpleCov.start(configuration.profile)
       else
-        logger.debug("Code Climate reporter not started.")
+        logger.info("Code Climate reporter not started.")
       end
     end
 
